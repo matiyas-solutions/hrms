@@ -30,6 +30,7 @@ app_include_js = [
 	"hrms.bundle.js",
 ]
 app_include_css = "hrms.bundle.css"
+code_only_modules = {"HR": ["HR Setup"]}
 app_include_icons = ["/assets/hrms/icons/module-icons.svg"]
 
 # website
@@ -105,7 +106,10 @@ after_migrate = "hrms.setup.update_select_perm_after_install"
 
 setup_wizard_requires = "assets/hrms/js/setup_wizard.js"
 setup_wizard_stages = "hrms.setup_wizard.get_setup_stages"
-setup_wizard_complete = "hrms.subscription_utils.update_erpnext_access"
+setup_wizard_complete = [
+	"hrms.subscription_utils.update_erpnext_access",
+	"hrms.subscription_utils.set_hrms_as_default_app",
+]
 
 extend_bootinfo = "hrms.utils.extend_bootinfo"
 
